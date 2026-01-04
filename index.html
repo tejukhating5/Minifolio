@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #ede9fe;
+            padding:40px;
+        }
+        #container
+        {
+            background-color: #f5f3ff;
+            max-width: 600px;
+            margin:auto;
+            border-radius: 14px;
+            padding: 40px;
+        }
+        h1,#about,#skills,#content{
+            text-align: center;
+        }
+        #content{
+            text-align: center;
+            color:#6d28d9;
+            font-weight: bold;
+        }
+        #skill
+        {
+           display: inline-block;
+           background-color: white;
+           padding: 8px 14px;
+           border-radius: 20px;
+           margin: 5px;
+           font-weight: bold;
+           color: #6d28d9;
+        }
+       #actions{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+        margin: 15px;
+       }
+       button{
+        padding: 12px 18px;
+        border: 0;
+        border-radius: 8px;
+        background-color: #6d28d9;
+        color: white;
+        font-weight: bold;
+       }
+       #content
+       {
+        background-color: white;
+        padding: 16px;
+        border-radius: 8px;
+        display: none;
+       }
+       #highlight
+       {
+        color: #6d28d9;
+        font-weight: bold;
+       }
+       @media (max-width:600px)
+       {
+        #actions
+        {
+            flex-direction: column;
+        }
+       }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Tejal</h1>
+        <p id="about">Hi, I am Learning <span id="highlight">MERN Stack</span> Development</p>
+        <div id="skills">
+            <p id="skill">HTML</p>
+            <p id="skill">CSS</p>
+            <p id="skill">Javascript</p>
+        </div>
+        <div id="actions">
+            <button onclick="showAbout()">About Us</button>
+            <button onclick="showCert()">Certificate</button>
+            <button onclick="showContact()">Contact Us</button>
+            <button onclick="showProjects()">Projects</button>
+        </div>
+        <div id="content"></div>
+    </div>
+    <script>
+       let contenBox = document.getElementById("content");
+
+       function showAbout()
+       {
+        contenBox.style.display ='block';
+        contenBox.innerText ="I am studying Computer Science Engineering";
+       }
+        function showCert()
+       {
+        contenBox.style.display ='block';
+        contenBox.innerText ="Java Full Stack Developer";
+       }
+        function showContact()
+       {
+        contenBox.style.display ='block';
+        contenBox.innerText ="9967XXXXXX";
+       }
+        function showProjects()
+       {
+        contenBox.style.display ='block';
+        contenBox.innerText ="Virtual Banking System, Spotify, Youtube";
+       }
+
+
+    </script>
+</body>
+</html>
