@@ -3,117 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tejal | Portfolio</title>
+
     <style>
-        body{
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #ede9fe;
-            padding:40px;
-        }
-        #container
-        {
-            background-color: #f5f3ff;
-            max-width: 600px;
-            margin:auto;
-            border-radius: 14px;
+        body {
+            font-family: "Segoe UI", Tahoma, sans-serif;
+            background: linear-gradient(135deg, #ecfeff, #f0fdf4);
             padding: 40px;
+            color: #0f172a;
         }
-        h1,#about,#skills,#content{
+
+        #container {
+            background: #ffffff;
+            max-width: 620px;
+            margin: auto;
+            border-radius: 18px;
+            padding: 42px;
+            box-shadow: 0 25px 45px rgba(15, 23, 42, 0.08);
+        }
+
+        h1 {
             text-align: center;
+            font-size: 34px;
+            margin-bottom: 6px;
+            color: #0f766e;
         }
-        #content{
+
+        #about {
             text-align: center;
-            color:#6d28d9;
-            font-weight: bold;
+            color: #475569;
+            margin-bottom: 26px;
+            font-size: 15px;
         }
-        #skill
-        {
-           display: inline-block;
-           background-color: white;
-           padding: 8px 14px;
-           border-radius: 20px;
-           margin: 5px;
-           font-weight: bold;
-           color: #6d28d9;
+
+        #highlight {
+            color: #14b8a6;
+            font-weight: 600;
         }
-       #actions{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        gap: 10px;
-        margin: 15px;
-       }
-       button{
-        padding: 12px 18px;
-        border: 0;
-        border-radius: 8px;
-        background-color: #6d28d9;
-        color: white;
-        font-weight: bold;
-       }
-       #content
-       {
-        background-color: white;
-        padding: 16px;
-        border-radius: 8px;
-        display: none;
-       }
-       #highlight
-       {
-        color: #6d28d9;
-        font-weight: bold;
-       }
-       @media (max-width:600px)
-       {
-        #actions
-        {
-            flex-direction: column;
+
+        #skills {
+            text-align: center;
+            margin-bottom: 28px;
         }
-       }
+
+        .skill {
+            display: inline-block;
+            background: #f0fdfa;
+            border: 1px solid #ccfbf1;
+            padding: 8px 18px;
+            border-radius: 999px;
+            margin: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #0f766e;
+        }
+
+        #actions {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 22px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            padding: 12px 22px;
+            border-radius: 12px;
+            border: none;
+            background: linear-gradient(135deg, #14b8a6, #06b6d4);
+            color: #ffffff;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(20, 184, 166, 0.35);
+            opacity: 0.95;
+        }
+
+        #content {
+            background: #f0fdfa;
+            border: 1px solid #ccfbf1;
+            padding: 20px;
+            border-radius: 14px;
+            text-align: center;
+            font-weight: 600;
+            color: #134e4a;
+            display: none;
+            animation: fade 0.4s ease-in-out;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0;
+                transform: translateY(6px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 600px) {
+            #actions {
+                flex-direction: column;
+            }
+        }
     </style>
 </head>
+
 <body>
+
     <div id="container">
         <h1>Tejal</h1>
-        <p id="about">Hi, I am Learning <span id="highlight">MERN Stack</span> Development</p>
+        <p id="about">
+            Hi, I am learning <span id="highlight">MERN Stack</span> Development
+        </p>
+
         <div id="skills">
-            <p id="skill">HTML</p>
-            <p id="skill">CSS</p>
-            <p id="skill">Javascript</p>
+            <span class="skill">HTML</span>
+            <span class="skill">CSS</span>
+            <span class="skill">JavaScript</span>
         </div>
+
         <div id="actions">
-            <button onclick="showAbout()">About Us</button>
-            <button onclick="showCert()">Certificate</button>
-            <button onclick="showContact()">Contact Us</button>
-            <button onclick="showProjects()">Projects</button>
+            <button onclick="showContent('I am studying Computer Science Engineering.')">About</button>
+            <button onclick="showContent('Certified Java Full Stack Developer.')">Certificate</button>
+            <button onclick="showContent('9967XXXXXX')">Contact</button>
+            <button onclick="showContent('Virtual Banking System, Spotify Clone, YouTube Clone.')">Projects</button>
         </div>
+
         <div id="content"></div>
     </div>
+
     <script>
-       let contenBox = document.getElementById("content");
+        const contentBox = document.getElementById("content");
 
-       function showAbout()
-       {
-        contenBox.style.display ='block';
-        contenBox.innerText ="I am studying Computer Science Engineering";
-       }
-        function showCert()
-       {
-        contenBox.style.display ='block';
-        contenBox.innerText ="Java Full Stack Developer";
-       }
-        function showContact()
-       {
-        contenBox.style.display ='block';
-        contenBox.innerText ="9967XXXXXX";
-       }
-        function showProjects()
-       {
-        contenBox.style.display ='block';
-        contenBox.innerText ="Virtual Banking System, Spotify, Youtube";
-       }
-
-
+        function showContent(text) {
+            contentBox.style.display = "block";
+            contentBox.innerText = text;
+        }
     </script>
+
 </body>
 </html>
